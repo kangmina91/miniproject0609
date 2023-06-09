@@ -1,0 +1,371 @@
+body {
+    overflow-x: hidden;
+}
+
+/* * {
+    outline: 1px solid tomato;
+} */
+
+.wrap {
+    min-width: 1200px;
+}
+
+.sec .title {
+    max-width: 1200px;
+    margin: 0 auto 28px auto;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.sec .title h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 18px 0;
+
+}
+
+.sec .title p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 20px;
+    /* 반응형일 때 밑으로 떨어지는 글자 사이의 간격은 line-height로 정하기 19px로 하면 4픽셀이 남고 위2픽셀 아래2픽셀이 된다(짝수로 만들기)  */
+}
+
+.header {
+    position: relative;
+    top: 0;
+    background: #fff;
+    z-index: 999;
+
+}
+
+.header .top_area {
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+}
+
+.header .top_area .top_menu {
+    display: flex;
+    justify-content: space-between;
+    line-height: 30px;
+}
+
+.header .top_area .top_menu .top_left {}
+
+.header .top_area .top_menu .top_left li {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.header .top_area .top_menu .top_right {
+    display: flex;
+    gap: 30px;
+}
+
+.header .top_area .top_menu .top_right li {
+    font-size: 11px;
+    font-weight: 00;
+    color: #666;
+    justify-content: space-between;
+}
+
+.header .top_search {
+    border-bottom: 1px solid #ddd;
+}
+
+.header .top_search .search_menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 100px;
+}
+
+.header .top_search .search_menu h1 img {
+    width: 100%;
+}
+
+.header .top_search .search_menu .service>ul {
+    display: flex;
+    gap: 30px;
+}
+
+.header .top_search .search_menu .service>ul li {
+    justify-content: space-between;
+}
+
+
+.header .top_search .search_menu .search {
+    margin: 0 0 0 100px;
+}
+
+.header .top_search .search_menu .search input[type="text"] {
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    font-family: 'Noto Sans KR';
+    transition: width 0.5s;
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+.header .top_search .search_menu .search input[type="text"]:focus {
+    width: 250px;
+    height: 30px;
+    outline: none;
+
+    border-bottom: 2px solid #000;
+}
+
+.header .top_search .search_menu .search input[type="text"]::placeholder {
+    color: #ddd;
+}
+
+.header .top_search .search_menu .search input[type="text"]:focus::placeholder {
+    color: transparent;
+}
+
+.header .top_search .search_menu .search button {
+    border: none;
+    outline: none;
+    background: transparent;
+
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+.header .top_search .search_menu .service {
+    margin: 0 0 0 100px;
+    font-size: 15px;
+}
+
+
+.header .header_wrap {
+    background: #000;
+}
+
+.header .header_wrap .header_menu {
+    display: flex;
+    height: 40px;
+}
+
+.header .gnb {
+    color: #eee;
+}
+
+/* 메뉴  */
+.header .gnb>ul {
+    display: flex;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+/* 각 메뉴  */
+.header .gnb>ul>li {
+    position: relative;
+    word-wrap: nowrap;
+    word-break: keep-all;
+}
+
+/* 각 메뉴의 a태그들을 상자로 만들어주기 */
+.header .gnb>ul>li>a {
+    display: block;
+    padding: 0 10px;
+    font-size: 14px;
+    line-height: 40px;
+}
+
+
+/* 서브 메뉴 만들고 높이를 없애기 */
+.header .gnb>ul>li .sub {
+    height: 0;
+    overflow: hidden;
+
+    position: absolute;
+    top: 40px;
+    left: 100%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+
+    width: 200%;
+    line-height: 40px;
+
+    transition: 0.5s;
+    background: #000
+}
+
+/* 메뉴에 마우스 갖다대면 서브 메뉴 등장 */
+.header .gnb>ul>li:hover .sub {
+    height: max-content;
+}
+
+.header .gnb>ul>li:hover {
+    background: #666;
+}
+
+/* 서브 메뉴 리스트 꾸며주기 */
+.header .gnb>ul>li .sub>li:not(:last-child) {
+    font-weight: 300;
+    font-size: 13px;
+    color: #eee;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 서브 메뉴 리스트 안 a태그  */
+.header .gnb>ul>li .sub>li a {
+    margin: 0 0 0 10px;
+}
+
+
+.main_visual {
+    position: relative;
+    height: 462px;
+}
+
+.main_visual .slide_wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* padding: 0 15px; */
+    width: 100%;
+}
+
+/* object-fit 쓰려면 우선 이미지에 높이를 줘야 한다 */
+.main_visual .main_slide .itm img {
+    height: 462px;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* 슬릭 버튼 */
+.main_visual .main_slide .slick-dots {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 슬릭 버튼 개별*/
+.main_visual .main_slide .slick-dots li {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin: 0 10px 0 0;
+}
+
+/* 지금 위치한 슬라이드 버튼 */
+.main_visual .main_slide .slick-dots li.slick-active {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* 슬릭 버튼 기본 외형 셋 */
+.main_visual .main_slide .slick-dots button {
+    display: none;
+}
+
+
+
+.main_event .content {
+    display: grid;
+    grid-template-columns: 33.3333333% 1fr 1fr;
+    gap: 30px;
+}
+
+.main_event .content figure .img_box {
+    margin: 0 0 10px 0;
+}
+
+.main_event .content figure figcaption strong {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 30px;
+}
+
+.main_event .content figure figcaption span {
+    display: block;
+    font-size: 15px;
+    text-align: center;
+    line-height: 20px;
+}
+
+.footer {
+    background: #6b6a6b;
+    color: #fff;
+    font-size: 13px;
+
+}
+
+.footer .ft {
+    border-bottom: 1px solid #888;
+
+}
+
+.footer .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+
+
+}
+
+.footer .content ul {
+    display: flex;
+    align-items: center;
+
+
+}
+
+.footer .content li {}
+
+.footer .content .customer {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: left;
+    width: 700px;
+
+}
+
+.footer .content .customer li {
+    margin: 0 30px 0 0;
+    line-height: 1.4;
+}
+
+.footer address {
+    font-style: normal;
+}
+
+.footer .sns {
+    gap: 4px;
+
+}
+
+
+
+.footer .sns i {
+    padding: 10px;
+    font-size: 20px;
+
+    background: #222;
+}
+
+.footer .link {
+    gap: 30px;
+}
+
+#fl {
+    outline: none;
+    border: none;
+    padding: 5px 20px;
+    background: #222;
+    color: #fff;
+}
+
+#fl:hover .first {
+    display: none;
+}
